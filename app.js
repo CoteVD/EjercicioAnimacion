@@ -51,14 +51,14 @@ function animateElementTop(element, start, target, duration) {
 const allLi = document.getElementsByTagName("li");
 Promise.all( //Esto devuelve un arreglo de promesas y ejecutarlas a la vez, se resuelve cuando terminan todas las promesas.
     [
-        animateElementLeft(allLi[0], -200, 1265, 2000),
+        animateElementLeft(allLi[0], -200, 1265, 1000),
         animateElementLeft(allLi[1], -200, 1265, 2000)
     ]
 ).then((results) => {
     console.log("Todas las animaciones llegaron a la derecha.");
     return Promise.all( 
         [
-            animateElementTop(allLi[0], 0, 380, 1000),
+            animateElementTop(allLi[0], 0, 380, 500),
             animateElementTop(allLi[1], 150, 530, 1000)
         ]
     )
@@ -66,7 +66,7 @@ Promise.all( //Esto devuelve un arreglo de promesas y ejecutarlas a la vez, se r
     console.log("Todas las animaciones llegaron abajo.");
     return Promise.all (
         [
-            animateElementLeft(allLi[0], 1265, 0, 2000),
+            animateElementLeft(allLi[0], 1265, 0, 1000),
             animateElementLeft(allLi[1], 1265, 0, 2000)
         ]        
     )
@@ -74,7 +74,7 @@ Promise.all( //Esto devuelve un arreglo de promesas y ejecutarlas a la vez, se r
     console.log("Todas las animaciones llegaron a la izquierda.");
     return Promise.all( 
         [
-            animateElementTop(allLi[0], 380, 0, 1000),
+            animateElementTop(allLi[0], 380, 0, 500),
             animateElementTop(allLi[1], 530, 150, 1000)
         ]
     )
